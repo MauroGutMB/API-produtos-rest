@@ -11,4 +11,13 @@ public interface ProdutoServices {
     public String updateProduto(Produto produto);
     public String deleteProduto(Long id);
     public Produto getProdutoById(Long id);
+    public Produto getProdutoByNome(String nome);
+    public String deleteProdutoByNome(String nome);
+    public List<Produto> getProdutosByCategory(String category);
+    public List<Produto> getProdutosByPrecoRange(Double minPreco, Double maxPreco);
+
+    // #TODO
+
+    // public String deleteByPrecoRange(Double minPreco, Double maxPreco);
+    // public String addProdutos(List<Produto> produtos);
   }

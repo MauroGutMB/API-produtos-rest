@@ -5,6 +5,9 @@ import api.produtos.ifpi.ApiProdutos.services.ProdutoServices;
 import api.produtos.ifpi.ApiProdutos.repository.ProdutoRepository;
 
 import java.util.List;
+
+import org.hibernate.mapping.Map;
+import org.springframework.data.domain.Example;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.RequestBody;
 
@@ -52,4 +55,55 @@ public class ProdutoImpl implements ProdutoServices {
     public Produto getProdutoById(Long id) {
         return produtoRepository.findById(id).orElse(null);
     }
+
+    @Override
+    public Produto getProdutoByNome(String nome) {
+      nome = nome.substring(0, 1).toUpperCase() + nome.substring(1).toLowerCase();
+      List<Produto> produtos = produtoRepository.findAll();
+      for (Produto produto : produtos) {
+        if (produto.getNome().equals(nome)) {
+          return produto;
+        }
+      }
+      return null;
+    }
+
+    @Override
+    public String deleteProdutoByNome(String nome) {
+      nome = nome.substring(0, 1).toUpperCase() + nome.substring(1).toLowerCase();
+      List<Produto> produtos = produtoRepository.findAll();
+      for (Produto produto : produtos) {
+        if (produto.getNome().equals(nome)) {
+          produtoRepository.delete(produto);
+          return "Produto deletado com sucesso!";
+        }
+      }
+      return "Produto não encontrado!";
+    }
+
+    @Override
+    public List<Produto> getProdutosByCategory(String category) {
+        category = category.substring(0, 1).toUpperCase() + category.substring(1).toLowerCase();
+        List<Produto> produtos = produtoRepository.findAll();
+        List<Produto> produtosByCategory = new java.util.ArrayList<>();
+        for (Produto produto : produtos) {
+            if (produto.getCategoria().equals(category)) {
+                produtosByCategory.add(produto);
+            }
+        }
+        return produtosByCategory;
+    }
+
+    @Override
+    public List<Produto> getProdutosByPrecoRange(Double minPreco, Double maxPreco) {
+        List<Produto> produtos = produtoRepository.findAll();
+        List<Produto> produtosByPrecoRange = new java.util.ArrayList<>();
+        for (Produto produto : produtos) {
+            if (produto.getPreco() >= minPreco && produto.getPreco() <= maxPreco) {
+                produtosByPrecoRange.add(produto);
+            }
+        }
+        return produtosByPrecoRange;
+    }
+
 }
