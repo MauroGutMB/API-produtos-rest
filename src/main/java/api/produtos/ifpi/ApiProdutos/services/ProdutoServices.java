@@ -2,13 +2,13 @@ package api.produtos.ifpi.ApiProdutos.services;
 
 import java.util.List;
 import org.springframework.stereotype.Service;
-import api.produtos.ifpi.ApiProdutos.model.ProdutoModel;
+import api.produtos.ifpi.ApiProdutos.model.Produto;
 
 @Service
 public interface ProdutoServices {
-    public List<ProdutoModel> getAllProdutos();
-    public String addProduto(ProdutoModel produto);
-    public String updateProduto(ProdutoModel produto);
-    public String deleteProduto(int id);
-    public ProdutoModel getProdutoById(int id);
+    public List<Produto> getAllProdutos();
+    public String addProduto(Produto produto);
+    public String updateProduto(Produto produto);
+    public String deleteProduto(Long id);
+    public Produto getProdutoById(Long id);
   }
