@@ -15,9 +15,6 @@ public interface ProdutoServices {
     public String deleteProdutoByNome(String nome);
     public List<Produto> getProdutosByCategory(String category);
     public List<Produto> getProdutosByPrecoRange(Double minPreco, Double maxPreco);
-
-    // #TODO
-
-    // public String deleteByPrecoRange(Double minPreco, Double maxPreco);
-    // public String addProdutos(List<Produto> produtos);
+    public String deleteByPrecoRange(Double minPreco, Double maxPreco);
+    public String addProdutos(List<Produto> produtos);
   }

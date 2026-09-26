@@ -56,6 +56,11 @@ public class ProdutoController {
     return produtoServices.addProduto(produto);
   }
 
+  @PostMapping("/lista")
+  public String addProdutos(@RequestBody List<Produto> produtos) {
+    return produtoServices.addProdutos(produtos);
+  }
+
   @DeleteMapping("{id}")
   public String deleteProduto(@PathVariable Long id) {
     return produtoServices.deleteProduto(id);
@@ -66,9 +71,16 @@ public class ProdutoController {
     return produtoServices.deleteProdutoByNome(nome);
   }
 
+  // url fica assim: .../produtos/preco?minPreco=10&maxPreco=100
+  @DeleteMapping("/preco")
+  public String deleteByPrecoRange(@RequestParam Double minPreco, @RequestParam Double maxPreco) {
+    return produtoServices.deleteByPrecoRange(minPreco, maxPreco);
+  }
+
   @PutMapping
   public String updateProduto(@RequestBody Produto produto) {
     return produtoServices.updateProduto(produto);
   }
+
 
 }

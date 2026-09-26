@@ -5,11 +5,9 @@ import api.produtos.ifpi.ApiProdutos.services.ProdutoServices;
 import api.produtos.ifpi.ApiProdutos.repository.ProdutoRepository;
 
 import java.util.List;
+import java.util.ArrayList;
 
-import org.hibernate.mapping.Map;
-import org.springframework.data.domain.Example;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.RequestBody;
 
 @Service
 public class ProdutoImpl implements ProdutoServices {
@@ -104,6 +102,29 @@ public class ProdutoImpl implements ProdutoServices {
             }
         }
         return produtosByPrecoRange;
+    }
+
+    @Override
+    public String deleteByPrecoRange(Double minPreco, Double maxPreco) {
+        List<Produto> produtos = produtoRepository.findAll();
+        List<Produto> produtosToDelete = new ArrayList<>();
+        for (Produto produto : produtos) {
+            if (produto.getPreco() >= minPreco && produto.getPreco() <= maxPreco) {
+                produtosToDelete.add(produto);
+            }
+        }
+        if (produtosToDelete.isEmpty()) {
+            return "Nenhum produto encontrado no intervalo de preço especificado!";
+        } else {
+            produtoRepository.deleteAll(produtosToDelete);
+            return "Produtos deletados com sucesso!";
+        }
+    }
+
+    @Override
+    public String addProdutos(List<Produto> produtos) {
+        produtoRepository.saveAll(produtos);
+        return "Produtos adicionados com sucesso!";
     }
 
 }
