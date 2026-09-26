@@ -1,0 +1,287 @@
+{
+  "info": {
+    "_postman_id": "3c59827e-0bc8-4a0a-9820-1789293d3a67",
+    "name": "ApiProdutos",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "56625943",
+    "_collection_link": "https://go.postman.co/collection/56625943-3c59827e-0bc8-4a0a-9820-1789293d3a67?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "Get Produtos",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/produtos",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "produtos"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get Produtos by categoria",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/produtos/categoria/fruta",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "produtos",
+            "categoria",
+            "fruta"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get Produto By id",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/produtos/1",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "produtos",
+            "1"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get Produtos by nome",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/produtos/nome/uva",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "produtos",
+            "nome",
+            "uva"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get Produtos in range ",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/produtos/preco?minPreco=2&maxPreco=5",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "produtos",
+            "preco"
+          ],
+          "query": [
+            {
+              "key": "minPreco",
+              "value": "2"
+            },
+            {
+              "key": "maxPreco",
+              "value": "5"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Post produto",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"nome\" : \"Pera\",\r\n    \"categoria\" : \"Fruta\",\r\n    \"preco\" : 6.99\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/produtos",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "produtos"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Post produto List",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "[\r\n    {\r\n        \"nome\": \"Uva\",\r\n        \"categoria\": \"Fruta\",\r\n        \"preco\": 1.99\r\n    },\r\n    {\r\n        \"nome\": \"Banana\",\r\n        \"categoria\": \"Fruta\",\r\n        \"preco\": 2.99\r\n    },\r\n    {\r\n        \"nome\": \"Pera\",\r\n        \"categoria\": \"Fruta\",\r\n        \"preco\": 6.99\r\n    }\r\n]",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/produtos/lista",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "produtos",
+            "lista"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Update produto",
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"id\" : 1,\r\n    \"nome\" : \"Uva\",\r\n    \"categoria\" : \"Fruta\",\r\n    \"preco\" : 1.99\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/produtos",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "produtos"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Delete produto",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"id\" : 1,\r\n    \"nome\" : \"Maçã\",\r\n    \"categoria\" : \"Fruta\",\r\n    \"preco\" : 4.99\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/produtos/3",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "produtos",
+            "3"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Delete produto by Nome",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/produtos/nome/pera",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "produtos",
+            "nome",
+            "pera"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Delete Produtos in range ",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/produtos/preco?minPreco=0&maxPreco=5",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "produtos",
+            "preco"
+          ],
+          "query": [
+            {
+              "key": "minPreco",
+              "value": "0"
+            },
+            {
+              "key": "maxPreco",
+              "value": "5"
+            }
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}
