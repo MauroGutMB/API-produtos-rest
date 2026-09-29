@@ -2,10 +2,10 @@
 
 API REST de cadastro de produtos feita com Spring Boot, JPA e SQLite.
 
-Atividade da disciplina **Programação para Internet 2** - Análise e Desenvolvimento de Sistemas, Módulo 4
-Instituto Federal do Piauí (IFPI) - Campus Corrente
-Professor: Misael Costa
-Aluno: Mauro Gutemberg Magalhães Barros
+Atividade da disciplina **Programação para Internet 2** - Análise e Desenvolvimento de Sistemas, Módulo 4  
+Instituto Federal do Piauí (IFPI) - Campus Corrente  
+Professor: Misael Costa  
+Aluno: Mauro Gutemberg Magalhães Barros  
 
 ## Tecnologias
 
