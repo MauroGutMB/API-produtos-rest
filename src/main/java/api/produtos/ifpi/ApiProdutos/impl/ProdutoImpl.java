@@ -127,4 +127,16 @@ public class ProdutoImpl implements ProdutoServices {
         return "Produtos adicionados com sucesso!";
     }
 
+    @Override
+    public List<Produto> getProdutosByDestaque() {
+        List<Produto> produtos = produtoRepository.findAll();
+        List<Produto> produtosByDestaque = new ArrayList<>();
+        for (Produto produto : produtos) {
+            if (produto.getDestaque()) {
+                produtosByDestaque.add(produto);
+            }
+        }
+        return produtosByDestaque;
+    }
+
 }

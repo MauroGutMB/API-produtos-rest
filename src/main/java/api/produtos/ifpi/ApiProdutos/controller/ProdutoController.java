@@ -82,5 +82,9 @@ public class ProdutoController {
     return produtoServices.updateProduto(produto);
   }
 
+  @GetMapping("/destaque")
+  public List<Produto> getProdutosByDestaque() {
+    return produtoServices.getProdutosByDestaque();
+  }
 
 }

@@ -15,6 +15,7 @@ public class Produto {
     private String nome;
     private String categoria;
     private double preco;
+    private Boolean destaque;
 
     public Produto() {
     }
@@ -53,6 +54,14 @@ public class Produto {
 
     public void setPreco(double preco) {
         this.preco = preco;
+    }
+
+    public void setDestaque(Boolean destaque) {
+        this.destaque = destaque;
+    }
+
+    public Boolean getDestaque() {
+        return destaque;
     }
 
 

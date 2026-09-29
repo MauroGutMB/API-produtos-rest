@@ -17,4 +17,5 @@ public interface ProdutoServices {
     public List<Produto> getProdutosByPrecoRange(Double minPreco, Double maxPreco);
     public String deleteByPrecoRange(Double minPreco, Double maxPreco);
     public String addProdutos(List<Produto> produtos);
+    public List<Produto> getProdutosByDestaque();
   }
