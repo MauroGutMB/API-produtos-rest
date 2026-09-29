@@ -30,6 +30,7 @@ A API sobe em `http://localhost:8080`. As tabelas são criadas automaticamente
   "nome": "Teclado",
   "categoria": "Periféricos",
   "preco": 150.0
+  "destaque" : true
 }
 ```
 
@@ -44,6 +45,7 @@ Base: `/produtos`
 | GET | `/produtos/nome/{nome}` | Busca produto por nome |
 | GET | `/produtos/categoria/{categoria}` | Lista produtos de uma categoria |
 | GET | `/produtos/preco?minPreco=10&maxPreco=100` | Lista produtos em uma faixa de preço |
+| GET | `/produtos/destaque` | Lista produtos em destaque |
 | POST | `/produtos` | Cadastra um produto |
 | POST | `/produtos/lista` | Cadastra vários produtos |
 | PUT | `/produtos` | Atualiza um produto (id no corpo) |
