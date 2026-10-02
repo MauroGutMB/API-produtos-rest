@@ -8,7 +8,7 @@ import api.produtos.ifpi.ApiProdutos.model.Produto;
 public interface ProdutoServices {
     public List<Produto> getAllProdutos();
     public String addProduto(Produto produto);
-    public String updateProduto(Produto produto);
+    public String updateProduto(Long id, Produto produto);
     public String deleteProduto(Long id);
     public Produto getProdutoById(Long id);
     public Produto getProdutoByNome(String nome);

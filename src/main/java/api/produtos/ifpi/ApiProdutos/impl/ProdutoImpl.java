@@ -30,9 +30,14 @@ public class ProdutoImpl implements ProdutoServices {
     }
 
     @Override
-    public String updateProduto(Produto produto) {
-        if (produtoRepository.existsById(produto.getId())) {
-            produtoRepository.save(produto);
+    public String updateProduto(Long id, Produto produto) {
+        if (produtoRepository.existsById(id)) {
+            produtoRepository.findById(id).ifPresent(p -> {
+                p.setNome(produto.getNome());
+                p.setCategoria(produto.getCategoria());
+                p.setDestaque(produto.getDestaque());
+                produtoRepository.save(p);
+            });
             return "Produto atualizado com sucesso!";
         } else {
             return "Produto não encontrado!";

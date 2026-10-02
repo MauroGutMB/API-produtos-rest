@@ -77,9 +77,9 @@ public class ProdutoController {
     return produtoServices.deleteByPrecoRange(minPreco, maxPreco);
   }
 
-  @PutMapping
-  public String updateProduto(@RequestBody Produto produto) {
-    return produtoServices.updateProduto(produto);
+  @PutMapping("/{id}")
+  public String updateProduto(@PathVariable Long id, @RequestBody Produto produto) {
+    return produtoServices.updateProduto(id, produto);
   }
 
   @GetMapping("/destaque")
